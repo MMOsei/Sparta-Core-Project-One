@@ -1,24 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="css/bootstrap-3.3.7-dist copy/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- jQuery Library -->
+    <script src="js/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <!-- Custom JS File -->
+    <script src="js/app.js" charset="utf-8"></script>
+    <title>Hangman</title>
+  </head>
 
-  <!-- <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script> -->
+  <body>
+    <div class="container">
+      <header>
+        <!-- col 8 offset 2 -->
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <!-- <h1>Hangman Title</h1> -->
+            <h1>Hangman</h1>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section> <!-- 100% width -->
+          <!-- col 12 -->
+          <div class="row">
+            <div class="col-md-12"><!-- Instructions -->
+              <h3>To Play, Please Choose a Category. When you are happy with your choice, press PLAY!</h3>
+              <h3>You must guess all the letters of the word(s) correctly, before the man is fully drawn and hung!</h3>
+            </div>
+          </div>
+        </section>    <!-- Close Section 1 -->
 
-  <script src="js/jquery-3.3.1.min.js" charset="utf-8"></script>
-  <script src="js/app.js" charset="utf-8"></script>
+        <section><!-- 100% width -->
+          <!-- col 6 offset 3 -->
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <!-- Category Title -->
+              <h1>Categories</h1>
+            </div>
+          </div>
+          <!-- col 4 -->
+          <div class="row">
+            <div class="col-md-3">
+              <!-- Category Buttons -->
+              <button type="button" id="movieQuotes-btn">Movie Quotes</button>
+            </div>
+            <div class="col-md-3">
+              <!-- Category Buttons -->
+              <button type="button" id="famousQuotes-btn">Famous Quotes</button>
+            </div>
+            <div class="col-md-3">
+              <!-- Category Buttons -->
+              <button type="button" id="bookTitles-btn">Book Titles</button>
+            </div>
+            <div class="col-md-3">
+              <!-- Category Buttons -->
+              <button type="button" id="surpriseMe-btn">Surprise Me!</button>
+            </div>
+          </div>
+        </section>    <!-- Close Section 2 -->
 
-  <link rel="stylesheet" href="css/style.css">
+        <section><!-- 100% width -->
+          <!-- col 6 offset 3 -->
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+                <!-- Play Button -->
+                <button type="button">PLAY!!</button>                    </div>
+            </div>
+        </section>    <!-- Close Section 3 -->
 
-  <title>jQuery Intro</title>
-</head>
-<body>
+      </main>
 
-
-</body>
-</html>
+      <footer>
+        <!-- Footer -->
+        <!-- Copyright Mimi Osei -->
+      </footer>
+    </div>
+  </body>
+  </html>
