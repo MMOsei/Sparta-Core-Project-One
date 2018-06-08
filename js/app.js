@@ -31,6 +31,10 @@ $(document).ready(function(){
       submitGuess();
     }
   })
+
+  $('#submit').click(function(){
+    submitGuess();
+  })
   //This is what controls the guess box and its submit button
   function submitGuess() {
     var counter = 0;
