@@ -1,88 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script> -->
-    <link rel="stylesheet" href="css/bootstrap-3.3.7-dist copy/css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- jQuery Library -->
-    <script src="js/jquery-3.3.1.min.js" charset="utf-8"></script>
-    <!-- Custom JS File -->
-    <script src="js/app.js" charset="utf-8"></script>
-    <title>Hangman</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <body>
-    <div class="container">
-      <header>
-        <!-- col 8 offset 2 -->
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-            <!-- <h1>Hangman Title</h1> -->
-            <h1>Hangman</h1>
-          </div>
-        </div>
-      </header>
-      <main>
-        <section> <!-- 100% width -->
-          <!-- col 12 -->
-          <div class="row">
-            <div class="col-md-12"><!-- Instructions -->
-              <h3>To Play, Please Choose a Category. When you are happy with your choice, press PLAY!</h3>
-              <h3>You must guess all the letters of the word(s) correctly, before the man is fully drawn and hung!</h3>
-            </div>
-          </div>
-        </section>    <!-- Close Section 1 -->
+  <!-- <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script> -->
 
-        <section><!-- 100% width -->
-          <!-- col 6 offset 3 -->
-          <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-              <!-- Category Title -->
-              <h1>Categories</h1>
-            </div>
-          </div>
-          <!-- col 4 -->
-          <div class="row">
-            <div class="col-md-3">
-              <!-- Category Buttons -->
-              <button type="button" id="movieQuotes-btn">Movie Quotes</button>
-            </div>
-            <div class="col-md-3">
-              <!-- Category Buttons -->
-              <button type="button" id="famousQuotes-btn">Famous Quotes</button>
-            </div>
-            <div class="col-md-3">
-              <!-- Category Buttons -->
-              <button type="button" id="bookTitles-btn">Book Titles</button>
-            </div>
-            <div class="col-md-3">
-              <!-- Category Buttons -->
-              <button type="button" id="surpriseMe-btn">Surprise Me!</button>
-            </div>
-          </div>
-        </section>    <!-- Close Section 2 -->
+  <script src="js/jquery-3.3.1.min.js" charset="utf-8"></script>
+  <script src="js/app.js" charset="utf-8"></script>
 
-        <section><!-- 100% width -->
-          <!-- col 6 offset 3 -->
-            <div class="row">
-              <div class="col-md-6 col-md-offset-3">
-                <!-- Play Button -->
-                <button type="button">PLAY!!</button>                    </div>
-            </div>
-        </section>    <!-- Close Section 3 -->
+  <link rel="stylesheet" href="css/bootstrap-3.3.7-dist copy/css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
 
-      </main>
+  <title>HANGMAN</title>
+</head>
+<body>
+  <div class="title">
+    <h1>Welcome to the "Somewhat" Hangman Game</h1>
+    <h2>(Where no man gets hung)</h2>
+  </div>
+  <div class="rules">
+    <h3>This is (a more child friendly) Hangman where no man gets hung. <br>
+      <br> RULES:
+      <br>Click the play button and a random word will be generated.
+      <br>Your job is to guess the random word by suggesting letters using the guess box.
+      <br>To sumbit your guess by clicking the button under the box or pressing enter on the keyboard.
+      <br><br>TO WIN:
+      <br>You must guess all the letters in the word correctly before you lose all your lives or time runs out.
+    </h3>
+  </div>
+  <div class="play-button">
+    <input type="submit" name="PLAY" value="Click Here To Play" id="play" class="start">
+  </div>
 
-      <footer>
-        <!-- Footer -->
-        <!-- Copyright Mimi Osei -->
-      </footer>
+  <div class="game">
+    <div id="end" class="end"></div>
+  </div>
+
+  <div class="game-area"> <!-- This is the container with display: flex; -->
+    <div class="left"> <!-- Left Flex: Row -->
+      <div id="word"></div>
+      <div id="score" class="score">You have <span id="current-score"></span> lives left.</div>
+    </div> <!-- Left Flex: Row Close -->
+
+    <div class="right"> <!-- Right Flex: Row -->
+      <input type="text" maxlength="1" name="Guess" placeholder="Enter your guess here" id="input"><br>
+      <input type="submit" name="Guess" value="Guess a letter" id="submit"><br><br>
+      <input type="reset" name="Reset" value="Reset For Sore Losers" id="reset">
+    </div><!-- Left Flex: Row Close-->
+  </div>
+  <footer>
+    <div class="footer-1">
+      <div id="myProgress">
+        <div id="myBar"></div>
+      </div>
     </div>
-  </body>
-  </html>
+    <div class="footer-2">
+      &copy; Marian Manly-Osei
+    </div>
+  </footer>
+</body>
+</html>
