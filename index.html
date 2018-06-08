@@ -19,26 +19,27 @@
   <title>HANGMAN</title>
 </head>
 <body>
+  <div class="title">
+    <h1>Welcome to the "Somewhat" Hangman Game</h1>
+    <h2>(Where no man gets hung)</h2>
+  </div>
+  <div class="rules">
+    <h3>This is (a more child friendly) Hangman where no man gets hung. <br>
+      <br> RULES:
+      <br>Click the play button and a random word will be generated.
+      <br>Your job is to guess the random word by suggesting letters using the guess box.
+      <br>To sumbit your guess by clicking the button under the box or pressing enter on the keyboard.
+      <br><br>TO WIN:
+      <br>You must guess all the letters in the word correctly before you lose all your lives or time runs out.
+    </h3>
+  </div>
+  <div class="play-button">
+    <input type="submit" name="PLAY" value="Click Here To Play" id="play" class="start">
+  </div>
 
-
-    <div class="title">
-        <h1>Welcome to the "Somewhat" Hangman Game</h1>
-        <h2>(Where no man gets hung)</h2>
-    </div>
-
-    <div class="rules">
-      <h3>This is (a more child friendly) Hangman where no man gets hung.
-        <br> RULES:
-        <br>Click the play button and a random word will be generated.
-        <br>Your job is to guess the random word by suggesting letters using the guess box.
-        <br>To sumbit your guess by clicking the button under the box or pressing enter on the keyboard.
-        <br><br>TO WIN:
-        <br>You must guess all the letters in the word correctly before you lose all your lives or time runs out.
-      </h3>
-    </div>
-        <div class="play-button">
-          <input type="submit" name="PLAY" value="Click Here To Play" id="play" class="start">
-        </div>
+  <div class="game">
+    <div id="end" class="end"></div>
+  </div>
 
   <div class="game-area"> <!-- This is the container with display: flex; -->
     <div class="left"> <!-- Left Flex: Row -->
@@ -46,28 +47,21 @@
       <div id="score" class="score">You have <span id="current-score"></span> lives left.</div>
     </div> <!-- Left Flex: Row Close -->
 
-  <div class="right"> <!-- Right Flex: Row -->
-        <input type="text" maxlength="1" name="Guess" placeholder="Enter your guess here" id="input"><br>
-        <input type="submit" name="Guess" value="Guess a letter" id="submit"><br><br>
-        <input type="reset" name="Reset" value="Reset For Sore Losers" id="reset">
-
-
-</div><!-- Left Flex: Row Close-->
+    <div class="right"> <!-- Right Flex: Row -->
+      <input type="text" maxlength="1" name="Guess" placeholder="Enter your guess here" id="input"><br>
+      <input type="submit" name="Guess" value="Guess a letter" id="submit"><br><br>
+      <input type="reset" name="Reset" value="Reset For Sore Losers" id="reset">
+    </div><!-- Left Flex: Row Close-->
+  </div>
+  <footer>
+    <div class="footer-1">
+      <div id="myProgress">
+        <div id="myBar"></div>
       </div>
-
-      <div class="game">
-        <div id="end"></div>
-      </div>
-
-<footer>
-  <div class="footer-1">
-    <div id="myProgress">
-      <div id="myBar"></div>
     </div>
-  </div>
-  <div class="footer-2">
-    &copy; Marian Manly-Osei
-  </div>
-</footer>
+    <div class="footer-2">
+      &copy; Marian Manly-Osei
+    </div>
+  </footer>
 </body>
 </html>

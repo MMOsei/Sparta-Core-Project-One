@@ -1,42 +1,37 @@
 $(document).ready(function(){
 
-  //GET GUESSED LETTERS TO SHOW UP ON THE GAME BOARD
 
   var words = [
-    'sausage',
-    'sparta'
+    'supermalt',
+    'jollof',
+    'water',
+    'talking',
   ];
   var lettersArray;
   var index = Math.floor(Math.random() * words.length);
   var id;
+  var livesLeft = 6;
 
 
-  //GET GUESSED LETTERS TO SHOW UP ON THE GAME BOARD
-
+  //This generates a random word to be guessed
   $('#play').one('click', function () {
     submitGuess();
-    $('.game-area').toggle();
+    $('.game-area').toggle(); //turns on the game area once the play button is clicked
 
     for (var i = 0; i < words[index].length; i++) {
       var letter = $('<div class="letter">' + words[index][i] + '</div>');
       $('#word').append(letter);
-      // console.log(words[index][i]);
     }
     $('#current-score').html(livesLeft);
     move();
   });
-
-
-
-  // var playerScore = 0;
-  var livesLeft = 6;
-
+  //This allows the Enter button on the keyboard to submit a guess
   window.addEventListener("keydown", function (event) {
     if (event.keyCode === 13) {
       submitGuess();
     }
   })
-
+  //This is what controls the guess box and its submit button
   function submitGuess() {
     var counter = 0;
     for (var i = 0; i < $('.letter').length; i++) {
@@ -45,13 +40,13 @@ $(document).ready(function(){
       }
       if ($('.letter')[i].style.color == 'black') {
         counter++;
-        if (counter >= words[index].length) {
+        if (counter >= words[index].length) { //This the the winning contition
           $('#end').html('YOU WIN');
           clearInterval(id);
         }
       }
     }
-
+    //Lose condtion 1
     if (!words[index].includes($('#input').val())) {
       livesLeft--;
       $('#current-score').html(livesLeft);
@@ -60,48 +55,17 @@ $(document).ready(function(){
       clearInterval(id);
     }
 
-    $('#input').val('');
+    $('#input').val(''); //This clears the input box after a guesss has been made
   }
 
-
-  // $('#submit').click(function () {
-  //
-  //   var counter = 0;
-  //   for (var i = 0; i < $('.letter').length; i++) {
-  //     if ($('.letter')[i].innerHTML === $('#input').val()) {
-  //       $('.letter')[i].style.color = 'black';
-  //     }
-  //     if ($('.letter')[i].style.color == 'black') {
-  //       counter++;
-  //       console.log(counter);
-  //       if (counter >= words[index].length) {
-  //         $('#end').html('YOU WIN');
-  //         clearInterval(id);
-  //         console.log(counter);
-  //       }
-  //     }
-  //   }
-  //
-  //   console.log(words[index]);
-  //   if (!words[index].includes($('#input').val())) {
-  //     console.log('not in the string');
-  //     livesLeft--;
-  //     $('#current-score').html(livesLeft);
-  //   } if (livesLeft == 0) {
-  //     $('#end').html('GAME OVER');
-  //     clearInterval(id);
-  //   }
-  //
-  //   $('#input').val('');
-  // });
-
+  //Function that controlls the timer
   function move() {
     var elem = document.getElementById("myBar");
     var width = 0;
     id = setInterval(frame, 600);
     function frame() {
       if (width == 100) {
-        $('#end').html('TIMES UP!!');
+        $('#end').html('TIMES UP!!'); //Lose condition 2
         clearInterval(id);
       } else {
         width++;
@@ -109,7 +73,7 @@ $(document).ready(function(){
       }
     }
   }
-
+  //Reset button to exit the game early
   $('#reset').click(function() {
     location.reload();
   })

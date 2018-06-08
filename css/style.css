@@ -33,10 +33,6 @@
 
 .play-button {
 text-align: center;
-/* padding: 300px; */
-/* border-radius: 30%;
-border: solid 1px #f6aeaa; */
-
 }
 
 .title {
@@ -46,11 +42,7 @@ border: solid 1px #f6aeaa; */
 .game-area {
   display: flex;
   flex-direction: column;
-
-}
-
-.left {
-
+  display: none;
 }
 
 footer {
@@ -59,13 +51,6 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
-}
-
-.game-area {
-  display: none;
-}
-
-.right {
 }
 
 .rules {
@@ -78,4 +63,8 @@ margin-bottom: 50px;
   padding: 20px;
   font-size: 30px;
 
+}
+
+.end {
+  font-size: 70px;
 }
